@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaPedidos" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DEJAVULAOZ-PC\MSSSQLSERVER2012;Initial Catalog=SistemaPedidos;Integrated Security=True" SettingsObjectName="DataClasesQuickOrder.Properties.Settings" SettingsPropertyName="SistemaPedidosConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.LAOZ_InsertUsuario" Method="LAOZ_InsertUsuario">
+    <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_cliente_natural" Method="sp_registrar_cliente_natural">
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipo_Documento" Parameter="tipo_Documento" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Primer_Nombre" Parameter="primer_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Nombre" Parameter="segundo_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Primer_Apellido" Parameter="primer_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Apellido" Parameter="segundo_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(14)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pagina_Web" Parameter="pagina_Web" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Autentiacion" Method="Autentiacion">
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contrasena" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="AutentiacionResult">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Roles_idRoles" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Primer_Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Primer_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Segundo_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -534,9 +534,7 @@ aside h3, .footer-widget h4
 
 #pricing-table
 {
-    /* margin:  100px auto;
-	 */
-    text-align: center; /*        width:  892px; /* total computed width = 222 x 3 + 226 */
+    text-align: center;
 }
 
     #pricing-table .plan
@@ -591,11 +589,6 @@ aside h3, .footer-widget h4
         padding: 20px;
         margin: -20px -20px 50px -20px;
         background-color: #6699FF;
-        background-image: -webkit-linear-gradient(#d07a7a, #6699FF);
-        background-image: -moz-linear-gradient(#d07a7a, #6699FF);
-        background-image: -o-linear-gradient(#d07a7a, #6699FF);
-        background-image: -ms-linear-gradient(#d07a7a, #6699FF);
-        background-image: linear-gradient(#d07a7a, #6699FF);
         color: #f5f5f5;
         text-decoration: none;
     }

@@ -1,0 +1,9 @@
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\LogicQuickOrder.dll
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\LogicQuickOrder.pdb
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.csprojResolveAssemblyReference.cache
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.dll
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.pdb
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.dll
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.dll
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.pdb
+C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.pdb

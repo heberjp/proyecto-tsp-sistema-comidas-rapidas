@@ -429,7 +429,7 @@ aside h3, .footer-widget h4
 
 .home-widget, .footer-widget
 {
-    width: 310px;
+    width: 300px;
     float: left;
     margin-top: 5px;
     margin-right: 10px;
@@ -544,7 +544,6 @@ aside h3, .footer-widget h4
         border: 1px solid #ddd;
         color: #333;
         padding: 20px;
-        float: left;
         position: relative;
         width: 267px;
         float: left;

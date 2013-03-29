@@ -39,28 +39,14 @@
             <img src="images/home/1.jpg" width="300" alt="" />
             <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
         </div>
-        <div class="border2"></div>
+        <div class="border2" />
         <br />
-        <aside id="pricing-table" class="clear">
+        <br />
+        <div></div>
+        <div id="pricing-table">
             <div class="plan">
                 <h3>Breakfast<span>$99</span></h3>
-                <a class="button" href="">Order Now</a>
-                <ul>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                </ul>
-                <h3>Lunch<span>$99</span></h3>
-                <a class="button" href="">Order Now</a>
-                <ul>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                </ul>
-                <h3>Dinner<span>$99</span></h3>
-                <a class="button" href="">Order Now</a>
+                <a class="button" href="Menu.aspx">Order Now</a>
                 <ul>
                     <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
                     <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
@@ -68,7 +54,27 @@
                     <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
                 </ul>
             </div>
-        </aside>
+            <div class="plan">
+                <h3>Lunch<span>$99</span></h3>
+                <a class="button" href="Menu.aspx">Order Now</a>
+                <ul>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                </ul>
+            </div>
+            <div class="plan">
+                <h3>Dinner<span>$99</span></h3>
+                <a class="button" href="Menu.aspx">Order Now</a>
+                <ul>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 </asp:Content>

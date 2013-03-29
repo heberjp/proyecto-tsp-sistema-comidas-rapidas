@@ -43,12 +43,12 @@
         <header>
             <nav>
                 <ul id="nav">
-                    <li><a href="Default.aspx" class="current">Home</a></li>
-                    <li><a href="About.aspx">About</a></li>
+                    <li><a href="~/Default.aspx" class="current">Home</a></li>
+                    <li><a href="~/About.aspx">About</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="~/Contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="content-wrapper">
@@ -66,7 +66,7 @@
                                 <ul>
                                     <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Registrarse</a></li>
                                     <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Ingresar</a></li>
-                                    <li><a href="/Account/Login.aspx" target="_blank" onclick="window.open(this.href, this.target, 'width=300,height=330'); return false;">Ingresar Temp</a></li>
+                                    <li><%--<a href="/Account/Login.aspx" target="_blank" onclick="window.open(this.href, this.target, 'width=300,height=330'); return false;">Ingresar Temp</a>--%></li>
                                 </ul>
                             </AnonymousTemplate>
                             <LoggedInTemplate>

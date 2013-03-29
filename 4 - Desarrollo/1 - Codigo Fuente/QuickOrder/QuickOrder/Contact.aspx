@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="QuickOrder.Contact" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <hgroup class="title">
-        <h1><%: Title %>.</h1>
-        <h2>LUIS ANDRES OLARTE ZABALA</h2>
-    </hgroup>
-
+    <h1><%: Title %>.</h1>
+    <br />
+    <h2>LUIS ANDRES OLARTE ZABALA</h2>
+    <br />
     <section class="contact">
         <header>
             <h3>Numero:</h3>

@@ -42,7 +42,6 @@
         <div class="border2" />
         <br />
         <br />
-        <div></div>
         <div id="pricing-table">
             <div class="plan">
                 <h3>Breakfast<span>$99</span></h3>
@@ -75,6 +74,6 @@
                 </ul>
             </div>
         </div>
+        <div class="border2" />
     </div>
-
 </asp:Content>

@@ -337,6 +337,16 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicQuickOrder\LogicQuickOrder.csproj">
+      <Project>{706de9fd-5eaa-45b8-9e87-6afeb3ad2f2e}</Project>
+      <Name>LogicQuickOrder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VoQuickOrder\VoQuickOrder.csproj">
+      <Project>{cfc45dc0-d11c-436c-9005-9e8e45a31cbd}</Project>
+      <Name>VoQuickOrder</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

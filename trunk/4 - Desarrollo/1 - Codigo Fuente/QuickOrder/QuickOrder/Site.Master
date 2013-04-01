@@ -5,12 +5,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title><%: Page.Title %> - Quick Order</title>
-
     <link href="styles/style.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="styles/base.css" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
-
-
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -21,10 +18,8 @@
 </head>
 <body>
     <form runat="server">
-
         <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Scripts>
-                <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="jquery.ui.combined" />
@@ -43,12 +38,12 @@
         <header>
             <nav>
                 <ul id="nav">
-                    <li><a href="~/Default.aspx" class="current">Home</a></li>
-                    <li><a href="~/About.aspx">About</a></li>
+                    <li><a href="Default.aspx" class="current">Home</a></li>
+                    <li><a href="About.aspx">About</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="~/Contact.html">Contact</a></li>
+                    <li><a href="Contact.aspx">Contact</a></li>
                 </ul>
             </nav>
             <div class="content-wrapper">
@@ -83,8 +78,8 @@
             </div>
         </header>
         <div id="body">
-            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
             <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
                 <asp:ContentPlaceHolder runat="server" ID="MainContent" />
             </section>
         </div>
@@ -92,6 +87,12 @@
             <div class="content-wrapper">
                 <div class="float-left">
                     <p>&copy; <%: DateTime.Now.Year %> - Proyecto TSP Quick Order</p>
+                </div>
+                <div class="float-left">
+                    <div id="social"><a href="http://twitter.com/elpoli" class="s3d twitter" target="_blank">Twitter <span class="icons twitter"></span></a><a href="http://www.facebook.com/elpoli" class="s3d facebook" target="_blank">Facebook <span class="icons facebook"></span></a></div>
+                </div>
+                <div class="float-left">
+                    <p>Developer: Luis Andres Olarte Zabala</p>
                 </div>
             </div>
         </footer>

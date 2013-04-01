@@ -7,3 +7,12 @@ C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickO
 C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.dll
 C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.pdb
 C:\Users\DejavuLAOZ\documents\visual studio 2012\Projects\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.pdb
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.csprojResolveAssemblyReference.cache
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.dll
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\LogicQuickOrder.dll
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\LogicQuickOrder.pdb
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.dll
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.dll
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.pdb
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.pdb
+C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.pdb

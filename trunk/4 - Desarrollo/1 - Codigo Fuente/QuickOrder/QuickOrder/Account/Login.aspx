@@ -9,33 +9,30 @@
     <section id="loginForm">
         <br />
         <h3>Use a local account to log in.</h3>
-        <asp:Login runat="server" ViewStateMode="Disabled" RenderOuterTable="false">
-            <LayoutTemplate>
-                <p class="validation-summary-errors">
-                    <asp:Literal runat="server" ID="FailureText" />
-                </p>
-                <fieldset>
-                    <legend>Log in Form</legend>
-                    <ol>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
-                            <asp:TextBox runat="server" ID="UserName" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
-                        </li>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
-                        </li>
-                        <li>
-                            <asp:CheckBox runat="server" ID="RememberMe" />
-                            <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
-                        </li>
-                    </ol>
-                    <asp:Button runat="server" CommandName="Login" Text="Log in" />
-                </fieldset>
-            </LayoutTemplate>
-        </asp:Login>
+
+        <p class="validation-summary-errors">
+            <asp:Literal runat="server" ID="FailureText" />
+        </p>
+        <fieldset>
+            <legend>Log in Form</legend>
+            <ol>
+                <li>
+                    <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+                    <asp:TextBox runat="server" ID="UserName" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
+                </li>
+                <li>
+                    <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
+                    <asp:TextBox runat="server" ID="Password" TextMode="Password" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
+                </li>
+                <li>
+                    <asp:CheckBox runat="server" ID="RememberMe" />
+                    <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
+                </li>
+            </ol>
+            <asp:Button runat="server" CommandName="Login" Text="Log in" OnClick="LogIn" />
+        </fieldset>
         <p>
             <h4>
                 <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>

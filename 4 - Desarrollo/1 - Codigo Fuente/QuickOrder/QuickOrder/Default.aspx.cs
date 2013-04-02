@@ -11,7 +11,13 @@ namespace QuickOrder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string imagenes = string.Empty;
+            for (int i = 0; i < 5; i++)
+            {
+                imagenes += "<li><a href=''><img src='images/home/" + i + ".jpg' alt='' /></a></li>";
+            }
 
+            Session["imagenes"] = imagenes;
         }
     }
 }

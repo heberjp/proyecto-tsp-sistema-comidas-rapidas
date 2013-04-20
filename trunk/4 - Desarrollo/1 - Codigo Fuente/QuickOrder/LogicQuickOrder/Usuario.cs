@@ -29,8 +29,8 @@ namespace LogicQuickOrder
             }
 
             AutentiacionResult result = baseDatos.Autentiacion(usuario, contrasena).FirstOrDefault();
-            
-            if (result.idUsuario == 0 || result.Primer_Nombre == string.Empty)
+
+            if (result == null)
             {
                 return null;
             }

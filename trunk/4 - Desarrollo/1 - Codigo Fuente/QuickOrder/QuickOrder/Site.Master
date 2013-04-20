@@ -56,23 +56,18 @@
                 </div>
                 <div class="float-right">
                     <section id="login">
-                        <asp:LoginView runat="server" ViewStateMode="Disabled">
-                            <AnonymousTemplate>
-                                <ul>
-                                    <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Registrarse</a></li>
-                                    <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Ingresar</a></li>
-                                    <li><%--<a href="/Account/Login.aspx" target="_blank" onclick="window.open(this.href, this.target, 'width=300,height=330'); return false;">Ingresar Temp</a>--%></li>
-                                </ul>
-                            </AnonymousTemplate>
-                            <LoggedInTemplate>
-                                <p>
-                                    Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
-                                        <asp:LoginName runat="server" CssClass="username" />
-                                    </a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Salir" LogoutPageUrl="~/" />
+                        <div>
+                            <ul>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Registrarse</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Ingresar</a></li>
+                                <li><%--<a href="/Account/Login.aspx" target="_blank" onclick="window.open(this.href, this.target, 'width=300,height=330'); return false;">Ingresar Temp</a>--%></li>
+                            </ul>
+                            <p>
+                                <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                                    <asp:Label runat="server" CssClass="username" ID="lbNombreUsuario" />
+                                </a>!
                                 </p>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
+                        </div>
                     </section>
                 </div>
             </div>

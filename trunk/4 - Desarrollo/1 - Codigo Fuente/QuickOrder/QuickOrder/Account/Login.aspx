@@ -6,40 +6,38 @@
 
     <h1><%: Title %>.</h1>
 
-    <section id="loginForm">
+    <div id="loginForm">
         <br />
-        <h3>Use a local account to log in.</h3>
-
-        <p class="validation-summary-errors">
-            <asp:Literal runat="server" ID="FailureText" />
-        </p>
+        <div class="validation-summary-errors">
+            <asp:Label runat="server" ID="lbFailureText" />
+        </div>
         <fieldset>
             <legend>Log in Form</legend>
             <ol>
                 <li>
-                    <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+                    <asp:Label runat="server" AssociatedControlID="UserName">Nombre de usuario</asp:Label>
                     <asp:TextBox runat="server" ID="UserName" />
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="El usuario es requerido." />
                 </li>
                 <li>
-                    <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
+                    <asp:Label runat="server" AssociatedControlID="Password">Contraseña</asp:Label>
                     <asp:TextBox runat="server" ID="Password" TextMode="Password" />
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="La contraseña es requerida." />
                 </li>
                 <li>
                     <asp:CheckBox runat="server" ID="RememberMe" />
-                    <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
+                    <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Recordarme?</asp:Label>
                 </li>
             </ol>
-            <asp:Button runat="server" CommandName="Login" Text="Log in" OnClick="LogIn" />
+            <asp:Button runat="server" CommandName="Login" Text="Ingresar" OnClick="LogIn" />
         </fieldset>
         <p>
             <h4>
-                <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
+                <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Registrarse</asp:HyperLink>
                 if you don't have an account.
             </h4>
         </p>
-    </section>
+    </div>
 
     <section id="socialLoginForm">
         <h2>Use another service to log in.</h2>

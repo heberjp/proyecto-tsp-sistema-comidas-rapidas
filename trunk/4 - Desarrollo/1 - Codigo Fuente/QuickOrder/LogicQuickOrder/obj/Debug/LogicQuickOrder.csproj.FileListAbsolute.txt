@@ -16,3 +16,12 @@ C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fue
 C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.pdb
 C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.pdb
 C:\Users\DejavuLAOZ\Documents\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.pdb
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\LogicQuickOrder.dll
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\LogicQuickOrder.pdb
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.dll
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.dll
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\DataClasesQuickOrder.pdb
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\bin\Debug\VoQuickOrder.pdb
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.csprojResolveAssemblyReference.cache
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.dll
+C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\LogicQuickOrder\obj\Debug\LogicQuickOrder.pdb

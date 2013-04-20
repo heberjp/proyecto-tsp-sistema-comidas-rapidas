@@ -1,4 +1,5 @@
-﻿namespace LogicQuickOrder
+﻿
+namespace LogicQuickOrder
 {
     using System;
     using System.Collections.Generic;
@@ -7,8 +8,17 @@
     using System.Text;
     using DataClasesQuickOrder;
 
+    /// <summary>
+    /// Implementa los metodos de la logica de la entidad usuario
+    /// </summary>
     public class Usuario
     {
+        /// <summary>
+        /// Valida la existencia del Usuario en la tabla usuario.
+        /// </summary>
+        /// <param name="usuario">Nombre Usuario</param>
+        /// <param name="contrasena">COntraseña</param>
+        /// <returns></returns>
         public VoQuickOrder.Usuario Autenticacion(string usuario, string contrasena)
         {
             DatabaseDataContext baseDatos = new DatabaseDataContext();
@@ -20,7 +30,7 @@
 
             AutentiacionResult result = baseDatos.Autentiacion(usuario, contrasena).FirstOrDefault();
             
-            if (result.idUsuario == 0 || result.idUsuario == null)
+            if (result.idUsuario == 0 || result.Primer_Nombre == string.Empty)
             {
                 return null;
             }
@@ -40,10 +50,15 @@
             return usu;
         }
 
+        /// <summary>
+        /// Inserta el usuario en la tabla usuario
+        /// </summary>
+        /// <param name="usuario">Objetpo de la clase usuario</param>
+        /// <returns>Id Usuario</returns>
         public int InsertarUsuario(VoQuickOrder.Usuario usuario)
         {
             DatabaseDataContext baseDatos = new DatabaseDataContext();
-            return baseDatos.LAOZ_InsertUsuario(
+            return baseDatos.InsertUsuario(
                                 usuario.IdRoles,
                                 usuario.NombreUsuario,
                                 usuario.Contrasena,

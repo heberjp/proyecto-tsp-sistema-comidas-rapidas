@@ -19,7 +19,9 @@ namespace QuickOrder.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            Session["ActualUsuario"] = usuario.Autenticacion(UserName.Text, Password.Text);  
+           var usuarioTemp = usuario.Autenticacion(UserName.Text, Password.Text);  
+
+           // usuarioTemp.IdRoles
        
         }
     }

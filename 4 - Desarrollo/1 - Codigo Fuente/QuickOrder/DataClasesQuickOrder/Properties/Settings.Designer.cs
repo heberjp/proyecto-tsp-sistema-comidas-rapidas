@@ -33,5 +33,16 @@ namespace DataClasesQuickOrder.Properties {
                 return ((string)(this["SistemaPedidosConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ANDRESOLARTE-PC\\SQLEXPRESS;Initial Catalog=QuickOrderDB;Integrated Se" +
+            "curity=True")]
+        public string QuickOrderDBConnectionString {
+            get {
+                return ((string)(this["QuickOrderDBConnectionString"]));
+            }
+        }
     }
 }

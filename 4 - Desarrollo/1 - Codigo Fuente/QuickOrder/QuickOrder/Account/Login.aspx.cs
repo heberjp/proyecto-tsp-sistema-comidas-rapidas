@@ -19,10 +19,15 @@ namespace QuickOrder.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-           var usuarioTemp = usuario.Autenticacion(UserName.Text, Password.Text);  
-
-           // usuarioTemp.IdRoles
-       
+            Session["usuario"] = usuario.Autenticacion(UserName.Text, Password.Text);
+            if (Session["usuario"] != null)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+            else
+            {
+                lbFailureText.Text = "Usuario o contraseña no existen";
+            }
         }
     }
 }

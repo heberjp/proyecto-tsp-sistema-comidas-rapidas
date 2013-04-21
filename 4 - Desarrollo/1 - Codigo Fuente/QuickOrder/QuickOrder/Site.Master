@@ -57,16 +57,16 @@
                 <div class="float-right">
                     <section id="login">
                         <div>
-                            <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Registrarse</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Ingresar</a></li>
-                                <li><%--<a href="/Account/Login.aspx" target="_blank" onclick="window.open(this.href, this.target, 'width=300,height=330'); return false;">Ingresar Temp</a>--%></li>
-                            </ul>
                             <p>
+                                <a runat="server" id="lnkblogin" onclick="location.href='Login.aspx'">Ingresar</a>
+                                <a runat="server" id="lnkbregister" onclick="location.href='Register.aspx'">Registrarse</a>
+                                <br />
+                                <br />
                                 <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
                                     <asp:Label runat="server" CssClass="username" ID="lbNombreUsuario" />
-                                </a>!
-                                </p>
+                                </a>
+                                <asp:LinkButton ID="btnSalir" runat="server" Text="Salir" OnClick="btnSalir_Click" />
+                            </p>
                         </div>
                     </section>
                 </div>
@@ -74,8 +74,14 @@
         </header>
         <div id="body">
             <section class="content-wrapper main-content clear-fix">
-                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent">
+                </asp:ContentPlaceHolder>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </section>
         </div>
         <footer>

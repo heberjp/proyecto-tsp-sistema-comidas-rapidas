@@ -31,22 +31,22 @@ namespace QuickOrder {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// registerLink control.
+        /// lnkblogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor registerLink;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkblogin;
         
         /// <summary>
-        /// loginLink control.
+        /// lnkbregister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor loginLink;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkbregister;
         
         /// <summary>
         /// lbNombreUsuario control.
@@ -58,6 +58,15 @@ namespace QuickOrder {
         protected global::System.Web.UI.WebControls.Label lbNombreUsuario;
         
         /// <summary>
+        /// btnSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSalir;
+        
+        /// <summary>
         /// FeaturedContent control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace QuickOrder {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder FeaturedContent;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// MainContent control.

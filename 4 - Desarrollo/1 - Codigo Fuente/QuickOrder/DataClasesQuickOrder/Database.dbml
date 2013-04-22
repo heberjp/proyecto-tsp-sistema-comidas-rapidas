@@ -170,4 +170,26 @@
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.ConsultaRoles" Method="ConsultaRoles">
+    <ElementType Name="ConsultaRolesResult">
+      <Column Name="idRoles" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertarRol" Method="InsertarRol">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="InsertarRolResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ActualizarUsuario" Method="ActualizarUsuario">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

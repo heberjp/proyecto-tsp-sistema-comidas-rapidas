@@ -21,21 +21,20 @@ namespace LogicQuickOrder
         /// <returns></returns>
         public VoQuickOrder.Usuario Autenticacion(string usuario, string contrasena)
         {
-            DatabaseDataContext baseDatos = new DatabaseDataContext();
-
             if (usuario.Equals(string.Empty) || contrasena.Equals(string.Empty))
             {
                 new Exception("El usuario y la contraseña son requeridos.");
             }
 
-            AutentiacionResult result = baseDatos.Autentiacion(usuario, contrasena).FirstOrDefault();
+            var db = new DatabaseDataContext();
+            var result = db.Autentiacion(usuario, contrasena).FirstOrDefault();
 
             if (result == null)
             {
                 return null;
             }
 
-            var usu = new VoQuickOrder.Usuario
+            return new VoQuickOrder.Usuario
                         {
                             Contrasena = contrasena,
                             NombreUsuario = usuario,
@@ -46,8 +45,6 @@ namespace LogicQuickOrder
                             Correo = result.Correo,
                             Telefono = result.Telefono
                         };
-
-            return usu;
         }
 
         /// <summary>
@@ -57,8 +54,36 @@ namespace LogicQuickOrder
         /// <returns>Id Usuario</returns>
         public int InsertarUsuario(VoQuickOrder.Usuario usuario)
         {
-            DatabaseDataContext baseDatos = new DatabaseDataContext();
-            return baseDatos.InsertUsuario(
+            if (usuario == null)
+            {
+                new Exception("Se requiere la informacion del usuario.");
+            }
+
+            var db = new DatabaseDataContext();
+            return db.InsertUsuario(
+                                usuario.IdRoles,
+                                usuario.NombreUsuario,
+                                usuario.Contrasena,
+                                usuario.Pregunta,
+                                usuario.Respuesta_Pregunta,
+                                usuario.Correo);
+        }
+
+        /// <summary>
+        /// Actualiza el usuario en la tabla usuario
+        /// </summary>
+        /// <param name="usuario">Objetpo de la clase usuario</param>
+        /// <returns>Id Usuario</returns>
+        public int ActualizarUsuario(VoQuickOrder.Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                new Exception("Se requiere la informacion del usuario.");
+            }
+
+            var db = new DatabaseDataContext();
+            return db.ActualizarUsuario(
+                                usuario.IdUsuario,
                                 usuario.IdRoles,
                                 usuario.NombreUsuario,
                                 usuario.Contrasena,

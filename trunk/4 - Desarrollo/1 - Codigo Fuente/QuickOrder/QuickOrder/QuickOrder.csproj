@@ -125,6 +125,7 @@
     <Content Include="About.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Manage.aspx" />
+    <Content Include="Menu.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterExternalLogin.aspx" />
     <Content Include="Contact.aspx" />
@@ -201,6 +202,7 @@
     <Content Include="Index.aspx" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Rewiev.aspx" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
@@ -238,7 +240,6 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alert.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -261,6 +262,13 @@
     </Compile>
     <Compile Include="Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -301,6 +309,13 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rewiev.aspx.cs">
+      <DependentUpon>Rewiev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rewiev.aspx.designer.cs">
+      <DependentUpon>Rewiev.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

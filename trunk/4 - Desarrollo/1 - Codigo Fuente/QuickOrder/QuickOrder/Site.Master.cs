@@ -65,15 +65,5 @@ namespace QuickOrder
             Session["usuario"] = null;
             Validarusuario();
         }
-
-        protected void lnkblogin_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
-
-        protected void lnkbregister_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Register.aspx");
-        }
     }
 }

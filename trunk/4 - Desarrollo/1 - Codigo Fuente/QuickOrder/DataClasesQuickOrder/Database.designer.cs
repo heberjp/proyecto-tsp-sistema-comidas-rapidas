@@ -207,6 +207,27 @@ namespace DataClasesQuickOrder
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roles_idRoles, nom_Usuario, contrasena, pregunta, respuesta_Pregunta, correo);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaRoles")]
+		public ISingleResult<ConsultaRolesResult> ConsultaRoles()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ConsultaRolesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertarRol")]
+		public ISingleResult<InsertarRolResult> InsertarRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre);
+			return ((ISingleResult<InsertarRolResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarUsuario")]
+		public int ActualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="BigInt")] System.Nullable<long> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Roles_idRoles", DbType="Int")] System.Nullable<int> roles_idRoles, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Usuario", DbType="VarChar(30)")] string nom_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pregunta", DbType="VarChar(30)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Respuesta_Pregunta", DbType="VarChar(30)")] string respuesta_Pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuario, roles_idRoles, nom_Usuario, contrasena, pregunta, respuesta_Pregunta, correo);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Administrador")]
@@ -3501,6 +3522,76 @@ namespace DataClasesQuickOrder
 				if ((this._Correo != value))
 				{
 					this._Correo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultaRolesResult
+	{
+		
+		private int _idRoles;
+		
+		private string _Rol;
+		
+		public ConsultaRolesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRoles", DbType="Int NOT NULL")]
+		public int idRoles
+		{
+			get
+			{
+				return this._idRoles;
+			}
+			set
+			{
+				if ((this._idRoles != value))
+				{
+					this._idRoles = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rol", DbType="VarChar(30)")]
+		public string Rol
+		{
+			get
+			{
+				return this._Rol;
+			}
+			set
+			{
+				if ((this._Rol != value))
+				{
+					this._Rol = value;
+				}
+			}
+		}
+	}
+	
+	public partial class InsertarRolResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public InsertarRolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}

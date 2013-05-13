@@ -1,151 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuickOrderDB" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ANDRESOLARTE-PC\SQLEXPRESS;Initial Catalog=QuickOrderDB;Integrated Security=True" SettingsObjectName="DataClasesQuickOrder.Properties.Settings" SettingsPropertyName="QuickOrderDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Administrador" Member="Administradors">
-    <Type Name="Administrador">
-      <Column Name="idAdministrador" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Usuario_idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Tipo_Documento_idTipo_Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Documento" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Primer_Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Primer_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Segundo_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Telefono" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Tipo_Documento_Administrador" Member="Tipo_Documento" ThisKey="Tipo_Documento_idTipo_Documento" OtherKey="idTipo_Documento" Type="Tipo_Documento" IsForeignKey="true" />
-      <Association Name="Usuario_Administrador" Member="Usuario" ThisKey="Usuario_idUsuario" OtherKey="idUsuario" Type="Usuario" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Categoria" Member="Categorias">
-    <Type Name="Categoria">
-      <Column Name="idCategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Categoria" Member="Categoria1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="Categoria_Producto" Member="Productos" ThisKey="idCategoria" OtherKey="CateGOria_idCateGOria" Type="Producto" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Cliente_Natural" Member="Cliente_Naturals">
-    <Type Name="Cliente_Natural">
-      <Column Name="idCliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Usuario_idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Tipo_Documento_idTipo_Documento" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Documento" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Primer_Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Primer_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Segundo_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Telefono" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Pagina_Web" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="Cliente_Natural_Factura" Member="Facturas" ThisKey="idCliente" OtherKey="Cliente_Natural_idCliente_Natural" Type="Factura" />
-      <Association Name="Tipo_Documento_Cliente_Natural" Member="Tipo_Documento" ThisKey="Tipo_Documento_idTipo_Documento" OtherKey="idTipo_Documento" Type="Tipo_Documento" IsForeignKey="true" />
-      <Association Name="Usuario_Cliente_Natural" Member="Usuario" ThisKey="Usuario_idUsuario" OtherKey="idUsuario" Type="Usuario" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Factura" Member="Facturas">
-    <Type Name="Factura">
-      <Column Name="idFactura" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Vendedor_idVendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Empresa_idEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Cliente_Natural_idCliente_Natural" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Cliente_Empresarial_idCliente_Empresarial" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Forma_Pago_idForma_Pago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Fecha_Factura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Association Name="Factura_Producto_por_Factura" Member="Producto_por_Facturas" ThisKey="idFactura" OtherKey="Factura_idFactura" Type="Producto_por_Factura" />
-      <Association Name="Cliente_Natural_Factura" Member="Cliente_Natural" ThisKey="Cliente_Natural_idCliente_Natural" OtherKey="idCliente" Type="Cliente_Natural" IsForeignKey="true" />
-      <Association Name="Forma_Pago_Factura" Member="Forma_Pago" ThisKey="Forma_Pago_idForma_Pago" OtherKey="idForma_Pago" Type="Forma_Pago" IsForeignKey="true" />
-      <Association Name="Vendedor_Factura" Member="Vendedor" ThisKey="Vendedor_idVendedor" OtherKey="idVendedor" Type="Vendedor" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Forma_Pago" Member="Forma_Pagos">
-    <Type Name="Forma_Pago">
-      <Column Name="idForma_Pago" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Forma_Pago" Member="Forma_Pago1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="Forma_Pago_Factura" Member="Facturas" ThisKey="idForma_Pago" OtherKey="Forma_Pago_idForma_Pago" Type="Factura" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Producto" Member="Productos">
-    <Type Name="Producto">
-      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CateGOria_idCateGOria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Unidades_disponibles" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nombre_Producto" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Association Name="Producto_Producto_por_Factura" Member="Producto_por_Facturas" ThisKey="idProducto" OtherKey="Producto_idProducto" Type="Producto_por_Factura" />
-      <Association Name="Producto_Producto_por_Producto" Member="Producto_por_Productos" ThisKey="idProducto" OtherKey="Id_Hijo" Type="Producto_por_Producto" />
-      <Association Name="Categoria_Producto" Member="Categoria" ThisKey="CateGOria_idCateGOria" OtherKey="idCategoria" Type="Categoria" IsForeignKey="true" />
-      <Association Name="Producto_por_Producto_Producto" Member="Producto_por_Producto" ThisKey="idProducto" OtherKey="Id_Padre" Type="Producto_por_Producto" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Producto_por_Factura" Member="Producto_por_Facturas">
-    <Type Name="Producto_por_Factura">
-      <Column Name="idProducto_por_Factura" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Producto_idProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Factura_idFactura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Cantidad_Producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Sub_Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Association Name="Factura_Producto_por_Factura" Member="Factura" ThisKey="Factura_idFactura" OtherKey="idFactura" Type="Factura" IsForeignKey="true" />
-      <Association Name="Producto_Producto_por_Factura" Member="Producto" ThisKey="Producto_idProducto" OtherKey="idProducto" Type="Producto" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Producto_por_Producto" Member="Producto_por_Productos">
-    <Type Name="Producto_por_Producto">
-      <Column Name="Id_Padre" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Id_Hijo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Producto_por_Producto_Producto" Member="Producto" ThisKey="Id_Padre" OtherKey="idProducto" Type="Producto" Cardinality="One" />
-      <Association Name="Producto_Producto_por_Producto" Member="Producto1" ThisKey="Id_Hijo" OtherKey="idProducto" Type="Producto" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Roles" Member="Roles">
-    <Type Name="Role">
-      <Column Name="idRoles" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Rol" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="Role_Usuario" Member="Usuarios" ThisKey="idRoles" OtherKey="Roles_idRoles" Type="Usuario" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tipo_Documento" Member="Tipo_Documentos">
-    <Type Name="Tipo_Documento">
-      <Column Name="idTipo_Documento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Tipo_Documento" Member="Tipo_Documento1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="Tipo_Documento_Administrador" Member="Administradors" ThisKey="idTipo_Documento" OtherKey="Tipo_Documento_idTipo_Documento" Type="Administrador" />
-      <Association Name="Tipo_Documento_Cliente_Natural" Member="Cliente_Naturals" ThisKey="idTipo_Documento" OtherKey="Tipo_Documento_idTipo_Documento" Type="Cliente_Natural" />
-      <Association Name="Tipo_Documento_Vendedor" Member="Vendedors" ThisKey="idTipo_Documento" OtherKey="Tipo_Documento_idTipo_Documento" Type="Vendedor" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Usuario" Member="Usuarios">
-    <Type Name="Usuario">
-      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Roles_idRoles" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nom_Usuario" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Contraseña" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Pregunta" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Respuesta_Pregunta" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Usuario_Administrador" Member="Administradors" ThisKey="idUsuario" OtherKey="Usuario_idUsuario" Type="Administrador" />
-      <Association Name="Usuario_Cliente_Natural" Member="Cliente_Naturals" ThisKey="idUsuario" OtherKey="Usuario_idUsuario" Type="Cliente_Natural" />
-      <Association Name="Usuario_Vendedor" Member="Vendedors" ThisKey="idUsuario" OtherKey="Usuario_idUsuario" Type="Vendedor" />
-      <Association Name="Role_Usuario" Member="Role" ThisKey="Roles_idRoles" OtherKey="idRoles" Type="Role" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Vendedor" Member="Vendedors">
-    <Type Name="Vendedor">
-      <Column Name="idVendedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Usuario_idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Tipo_Documento_idTipo_Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Documento" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Primer_Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Primer_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Segundo_Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Telefono" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Association Name="Vendedor_Factura" Member="Facturas" ThisKey="idVendedor" OtherKey="Vendedor_idVendedor" Type="Factura" />
-      <Association Name="Tipo_Documento_Vendedor" Member="Tipo_Documento" ThisKey="Tipo_Documento_idTipo_Documento" OtherKey="idTipo_Documento" Type="Tipo_Documento" IsForeignKey="true" />
-      <Association Name="Usuario_Vendedor" Member="Usuario" ThisKey="Usuario_idUsuario" OtherKey="idUsuario" Type="Usuario" IsForeignKey="true" />
-    </Type>
-  </Table>
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaPedidos" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ANDRESOLARTE-PC\SQLEXPRESS;Initial Catalog=SistemaPedidos;Integrated Security=True" SettingsObjectName="DataClasesQuickOrder.Properties.Settings" SettingsPropertyName="SistemaPedidosConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.ActualizarUsuario" Method="ActualizarUsuario">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.Autentiacion" Method="Autentiacion">
     <Parameter Name="usuario" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="contrasena" Type="System.String" DbType="VarChar(50)" />
@@ -161,7 +25,12 @@
       <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.InsertUsuario" Method="InsertUsuario">
+  <Function Name="dbo.InsertRol" Method="InsertRol">
+    <Parameter Name="Aplicacion" Parameter="aplicacion" Type="System.String" DbType="NVarChar(1)" />
+    <Parameter Name="RolNombre" Parameter="rolNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(256)" />
+  </Function>
+  <Function Name="dbo.LAOZ_InsertUsuario" Method="LAOZ_InsertUsuario">
     <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
     <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
@@ -170,26 +39,165 @@
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ConsultaRoles" Method="ConsultaRoles">
-    <ElementType Name="ConsultaRolesResult">
-      <Column Name="idRoles" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Rol" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.sp_Elimina_producto" Method="sp_Elimina_producto">
+    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.InsertarRol" Method="InsertarRol">
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="InsertarRolResult">
-      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.sp_eliminar_cliente_natural" Method="sp_eliminar_cliente_natural">
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ActualizarUsuario" Method="ActualizarUsuario">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(30)" />
+  <Function Name="dbo.sp_eliminar_factura" Method="sp_eliminar_factura">
+    <Parameter Name="idFactura" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_eliminar_producto" Method="sp_eliminar_producto">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_eliminar_producto_por_factura" Method="sp_eliminar_producto_por_factura">
+    <Parameter Name="idFactura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NomProducto" Parameter="nomProducto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_eliminar_vendedor" Method="sp_eliminar_vendedor">
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_modificar_cliente_natural" Method="sp_modificar_cliente_natural">
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Documento" Parameter="nuevo_Documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Tipo_Documento" Parameter="nuevo_Tipo_Documento" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Nuevo_Primer_Nombre" Parameter="nuevo_Primer_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Segundo_Nombre" Parameter="nuevo_Segundo_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Primer_Apellido" Parameter="nuevo_Primer_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Segundo_Apellido" Parameter="nuevo_Segundo_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Telefono" Parameter="nuevo_Telefono" Type="System.String" DbType="VarChar(14)" />
+    <Parameter Name="Nuevo_Direccion" Parameter="nuevo_Direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Pagina_Web" Parameter="nuevo_Pagina_Web" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Correo" Parameter="nuevo_Correo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_modificar_producto" Method="sp_modificar_producto">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nuevo_Nombre_Producto" Parameter="nuevo_Nombre_Producto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Unidades_Disponibles" Parameter="nuevo_Unidades_Disponibles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nuevo_Descripcion" Parameter="nuevo_Descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Precio" Parameter="nuevo_Precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Nuevo_IVA" Parameter="nuevo_IVA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_modificar_vendedor" Method="sp_modificar_vendedor">
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Documento" Parameter="nuevo_Documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Tipo_Documento" Parameter="nuevo_Tipo_Documento" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Nuevo_Primer_Nombre" Parameter="nuevo_Primer_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Segundo_Nombre" Parameter="nuevo_Segundo_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Primer_Apellido" Parameter="nuevo_Primer_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Segundo_Apellido" Parameter="nuevo_Segundo_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nuevo_Telefono" Parameter="nuevo_Telefono" Type="System.String" DbType="VarChar(14)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_producto_por_factura" Method="sp_producto_por_factura">
+    <Parameter Name="Nombre_Producto" Parameter="nombre_Producto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id_Factura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_administrador" Method="sp_registrar_administrador">
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipo_Documento" Parameter="tipo_Documento" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Primer_Nombre" Parameter="primer_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Nombre" Parameter="segundo_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Primer_Apellido" Parameter="primer_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Apellido" Parameter="segundo_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(14)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_cliente_natural" Method="sp_registrar_cliente_natural">
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipo_Documento" Parameter="tipo_Documento" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Primer_Nombre" Parameter="primer_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Nombre" Parameter="segundo_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Primer_Apellido" Parameter="primer_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Apellido" Parameter="segundo_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(14)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pagina_Web" Parameter="pagina_Web" Type="System.String" DbType="VarChar(50)" />
+  </Function>
+  <Function Name="dbo.sp_registrar_factura" Method="sp_registrar_factura">
+    <Parameter Name="Nom_Vendedor" Parameter="nom_Vendedor" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nom_Empresa" Parameter="nom_Empresa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nom_Cliente_Natural" Parameter="nom_Cliente_Natural" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nom_Cliente_Empresarial" Parameter="nom_Cliente_Empresarial" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Forma_Pago" Parameter="forma_Pago" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_producto" Method="sp_registrar_producto">
+    <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre_Producto" Parameter="nombre_Producto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Unidades_Disponibles" Parameter="unidades_Disponibles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Precio" Parameter="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="IVA" Parameter="iVA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_usuario" Method="sp_registrar_usuario">
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Rol" Parameter="rol" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_vendedor" Method="sp_registrar_vendedor">
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipo_Documento" Parameter="tipo_Documento" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Primer_Nombre" Parameter="primer_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Nombre" Parameter="segundo_Nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Primer_Apellido" Parameter="primer_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Segundo_Apellido" Parameter="segundo_Apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(14)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_reporte_factura" Method="sp_reporte_factura">
+    <Parameter Name="idFactura" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_reporte_facturaResult">
+      <Column Name="NomCli" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="NomVen" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="idFactura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFactura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductoNom" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CantProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioProducto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IVAProducto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SubTotalProducto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalFactura" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NomEmp" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_total_factura" Method="sp_total_factura">
+    <Parameter Name="idFactura" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

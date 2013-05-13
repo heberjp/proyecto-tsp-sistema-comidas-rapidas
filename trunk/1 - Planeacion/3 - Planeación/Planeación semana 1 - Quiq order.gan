@@ -2,8 +2,8 @@
     <description/>
     <view zooming-state="default:0" id="gantt-chart"/>
     <view id="resource-table">
-        <field id="0" name="Nombre" width="76" order="0"/>
-        <field id="1" name="Función" width="23" order="1"/>
+        <field id="0" name="Nombre" width="53" order="0"/>
+        <field id="1" name="Función" width="46" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -31,8 +31,8 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="6" name="Análisis" color="#8cb6ce" meeting="false" start="2013-05-12" duration="4" complete="11" expand="true">
-            <task id="3" name="Generar prototipos visuales módulo inventario" color="#ff9933" meeting="false" start="2013-05-12" duration="1" complete="0" expand="true"/>
+        <task id="6" name="Análisis" color="#8cb6ce" meeting="false" start="2013-05-12" duration="4" complete="20" expand="true">
+            <task id="3" name="Generar prototipos visuales módulo inventario" color="#ff9933" meeting="false" start="2013-05-12" duration="1" complete="100" expand="true"/>
             <task id="0" name="Generar documento planeación y estrategia" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
             <task id="8" name="Revisión y aprobación prototipos visuales" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
             <task id="12" name="Correcciones al prototipo visual" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>

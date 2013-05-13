@@ -40,7 +40,7 @@
                 <ul id="nav">
                     <li><a href="Default.aspx" class="current">Home</a></li>
                     <li><a href="About.aspx">About</a></li>
-                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Menu.aspx">Menu</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="reviews.html">Reviews</a></li>
                     <li><a href="Contact.aspx">Contact</a></li>
@@ -62,10 +62,10 @@
                                 <a runat="server" id="lnkbregister" onclick="location.href='Register.aspx'">Registrarse</a>
                                 <br />
                                 <br />
-                                <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                                <a runat="server" class="username" href="~/Manage.aspx" title="Manage your account">
                                     <asp:Label runat="server" CssClass="username" ID="lbNombreUsuario" />
                                 </a>
-                                <asp:LinkButton ID="btnSalir" runat="server" Text="Salir" OnClick="btnSalir_Click" />
+                                <asp:LinkButton ID="btnSalir" runat="server" Text="Salir" OnClick="BtnSalirClick" />
                             </p>
                         </div>
                     </section>
@@ -76,12 +76,8 @@
             <section class="content-wrapper main-content clear-fix">
                 <asp:ContentPlaceHolder runat="server" ID="FeaturedContent">
                 </asp:ContentPlaceHolder>
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
             </section>
         </div>
         <footer>

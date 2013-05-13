@@ -1,12 +1,13 @@
-﻿
+﻿    
+using System.Collections.Generic;
+
 namespace LogicQuickOrder
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Data.Linq;
-    using System.Text;
-    using DataClasesQuickOrder;
+    using DatabaseDataContext = DataClasesQuickOrder.DatabaseDataContext;
+    using EntidadesDBDataContext = DataClasesQuickOrder.EntidadesDBDataContext;
+    using DBUsuario = DataClasesQuickOrder.Usuario;
 
     /// <summary>
     /// Implementa los metodos de la logica de la entidad usuario
@@ -23,7 +24,7 @@ namespace LogicQuickOrder
         {
             if (usuario.Equals(string.Empty) || contrasena.Equals(string.Empty))
             {
-                new Exception("El usuario y la contraseña son requeridos.");
+                throw new ArgumentException("El usuario y la contraseña son requeridos.", "usuario");
             }
 
             var db = new DatabaseDataContext();
@@ -36,14 +37,9 @@ namespace LogicQuickOrder
 
             return new VoQuickOrder.Usuario
                         {
-                            Contrasena = contrasena,
                             NombreUsuario = usuario,
                             IdUsuario = result.idUsuario,
-                            Nombre = string.Format(" {0} {1} ", result.Primer_Nombre, result.Segundo_Nombre),
-                            Apellido = string.Format(" {0} {1} ", result.Primer_Apellido, result.Segundo_Apellido),
-                            Direccion = result.Direccion,
-                            Correo = result.Correo,
-                            Telefono = result.Telefono
+                            IdRoles = result.Roles_idRoles
                         };
         }
 
@@ -52,21 +48,58 @@ namespace LogicQuickOrder
         /// </summary>
         /// <param name="usuario">Objetpo de la clase usuario</param>
         /// <returns>Id Usuario</returns>
-        public int InsertarUsuario(VoQuickOrder.Usuario usuario)
+        public bool InsertarUsuario(VoQuickOrder.Usuario usuario)
         {
             if (usuario == null)
             {
-                new Exception("Se requiere la informacion del usuario.");
+                throw new ArgumentException("El parametro producto no puede ser nulo", "usuario");
             }
+            try
+            {
 
-            var db = new DatabaseDataContext();
-            return db.InsertUsuario(
-                                usuario.IdRoles,
-                                usuario.NombreUsuario,
-                                usuario.Contrasena,
-                                usuario.Pregunta,
-                                usuario.Respuesta_Pregunta,
-                                usuario.Correo);
+                new EntidadesDBDataContext().Usuarios.InsertOnSubmit(new DBUsuario
+                {
+                    idUsuario = usuario.IdUsuario,
+                    Nom_Usuario = usuario.NombreUsuario,
+                    Pregunta = usuario.Pregunta,
+                    Respuesta_Pregunta = usuario.RespuestaPregunta,
+                    Roles_idRoles = usuario.IdRoles
+                });
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Eliminar el usuario en la tabla usuario
+        /// </summary>
+        /// <param name="usuario">Objetpo de la clase usuario</param>
+        /// <returns>Id Usuario</returns>
+        public bool EliminarUsuario(VoQuickOrder.Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                throw new ArgumentException("El parametro producto no puede ser nulo", "usuario");
+            }
+            try
+            {
+                new EntidadesDBDataContext().Usuarios.DeleteOnSubmit(new DBUsuario
+                {
+                    idUsuario = usuario.IdUsuario,
+                    Nom_Usuario = usuario.NombreUsuario,
+                    Pregunta = usuario.Pregunta,
+                    Respuesta_Pregunta = usuario.RespuestaPregunta,
+                    Roles_idRoles = usuario.IdRoles
+                });
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -78,18 +111,29 @@ namespace LogicQuickOrder
         {
             if (usuario == null)
             {
-                new Exception("Se requiere la informacion del usuario.");
+                throw new ArgumentException("Se requiere la informacion del usuario.", "usuario");
             }
 
             var db = new DatabaseDataContext();
+
             return db.ActualizarUsuario(
-                                usuario.IdUsuario,
-                                usuario.IdRoles,
-                                usuario.NombreUsuario,
-                                usuario.Contrasena,
-                                usuario.Pregunta,
-                                usuario.Respuesta_Pregunta,
-                                usuario.Correo);
+                usuario.IdUsuario,
+                usuario.IdRoles,
+                usuario.NombreUsuario,
+                usuario.Contrasena,
+                usuario.Pregunta,
+                usuario.RespuestaPregunta,
+                usuario.Correo);
         }
+
+        public List<VoQuickOrder.Rol> ConsultarRoles()
+        {
+            return new EntidadesDBDataContext().Roles.ToList().Select(
+                                           r => new VoQuickOrder.Rol
+                                           {
+                                               Nombre = r.Rol,
+                                               IdRoles = r.idRoles
+                                           }).ToList();
+        }   
     }
 }

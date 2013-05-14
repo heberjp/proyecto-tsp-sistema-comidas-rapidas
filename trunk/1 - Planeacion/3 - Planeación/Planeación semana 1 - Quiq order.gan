@@ -2,8 +2,8 @@
     <description/>
     <view zooming-state="default:0" id="gantt-chart"/>
     <view id="resource-table">
-        <field id="0" name="Nombre" width="53" order="0"/>
-        <field id="1" name="Función" width="46" order="1"/>
+        <field id="0" name="Nombre" width="50" order="0"/>
+        <field id="1" name="Función" width="49" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -31,7 +31,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="6" name="Análisis" color="#8cb6ce" meeting="false" start="2013-05-12" duration="4" complete="20" expand="true">
+        <task id="6" name="Análisis" color="#8cb6ce" meeting="false" start="2013-05-12" duration="4" complete="50" expand="true">
             <task id="3" name="Generar prototipos visuales módulo inventario" color="#ff9933" meeting="false" start="2013-05-12" duration="1" complete="100" expand="true"/>
             <task id="0" name="Generar documento planeación y estrategia" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
             <task id="8" name="Revisión y aprobación prototipos visuales" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
@@ -39,9 +39,9 @@
             <task id="14" name="Mostrar al cliente los prototipos visuales y aprovación del mismo." color="#ff9933" meeting="false" start="2013-05-14" duration="1" complete="0" expand="true"/>
             <task id="16" name="Realizar correcciones al prototipo visual según especificaciones del cliente" color="#ff9933" meeting="false" start="2013-05-15" duration="1" complete="0" expand="true"/>
             <task id="21" name="Especificación de casos de uso módulo inventario" color="#ff9933" meeting="false" start="2013-05-12" duration="1" complete="100" expand="true"/>
-            <task id="23" name="Revisión de casos de uso" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
-            <task id="25" name="Corrección a casos de uso" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
-            <task id="28" name="Generación de documentos especificación de caso de uso" color="#ff9933" meeting="false" start="2013-05-15" duration="1" complete="0" expand="true"/>
+            <task id="23" name="Revisión de casos de uso" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="100" expand="true"/>
+            <task id="25" name="Corrección a casos de uso" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="100" expand="true"/>
+            <task id="28" name="Generación de documentos especificación de caso de uso" color="#ff9933" meeting="false" start="2013-05-15" duration="1" complete="100" expand="true"/>
         </task>
         <task id="31" name="Diseño" color="#8cb6ce" meeting="false" start="2013-05-16" duration="2" complete="0" expand="true">
             <task id="33" name="Realizar diagramas de clases del módulo" color="#ff9933" meeting="false" start="2013-05-16" duration="1" complete="0" expand="true"/>

@@ -31,13 +31,17 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="6" name="Análisis" color="#8cb6ce" meeting="false" start="2013-05-12" duration="4" complete="50" expand="true">
+        <task id="6" name="Análisis" color="#8cb6ce" meeting="false" start="2013-05-12" duration="4" complete="90" expand="true">
             <task id="3" name="Generar prototipos visuales módulo inventario" color="#ff9933" meeting="false" start="2013-05-12" duration="1" complete="100" expand="true"/>
             <task id="0" name="Generar documento planeación y estrategia" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
-            <task id="8" name="Revisión y aprobación prototipos visuales" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
-            <task id="12" name="Correcciones al prototipo visual" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="0" expand="true"/>
-            <task id="14" name="Mostrar al cliente los prototipos visuales y aprovación del mismo." color="#ff9933" meeting="false" start="2013-05-14" duration="1" complete="0" expand="true"/>
-            <task id="16" name="Realizar correcciones al prototipo visual según especificaciones del cliente" color="#ff9933" meeting="false" start="2013-05-15" duration="1" complete="0" expand="true"/>
+            <task id="8" name="Revisión y aprobación prototipos visuales" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="100" expand="true"/>
+            <task id="12" name="Correcciones al prototipo visual" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="100" expand="true">
+                <notes><![CDATA[Esta Tarea no fue necesario realizarla.]]></notes>
+            </task>
+            <task id="14" name="Mostrar al cliente los prototipos visuales y aprovación del mismo." color="#ff9933" meeting="false" start="2013-05-14" duration="1" complete="100" expand="true"/>
+            <task id="16" name="Realizar correcciones al prototipo visual según especificaciones del cliente" color="#ff9933" meeting="false" start="2013-05-15" duration="1" complete="100" expand="true">
+                <notes><![CDATA[No fue necesario realizar la tarea.]]></notes>
+            </task>
             <task id="21" name="Especificación de casos de uso módulo inventario" color="#ff9933" meeting="false" start="2013-05-12" duration="1" complete="100" expand="true"/>
             <task id="23" name="Revisión de casos de uso" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="100" expand="true"/>
             <task id="25" name="Corrección a casos de uso" color="#ff9933" meeting="false" start="2013-05-13" duration="1" complete="100" expand="true"/>
@@ -49,7 +53,7 @@
             <task id="38" name="Realizar prototipos visuales a código" color="#ff9933" meeting="false" start="2013-05-17" duration="1" complete="0" expand="true"/>
             <task id="39" name="Realizar casos de prueba por cada caso de uso" color="#ff9933" meeting="false" start="2013-05-16" duration="2" complete="0" expand="true"/>
         </task>
-        <task id="47" name="Seguimiento a las actividades semana 1" color="#ff9933" meeting="false" start="2013-05-12" duration="6" complete="0" expand="true"/>
+        <task id="47" name="Seguimiento a las actividades semana 1" color="#ff9933" meeting="false" start="2013-05-12" duration="6" complete="60" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Adriana Ortiz" function="SoftwareDevelopment:3" contacts="" phone=""/>

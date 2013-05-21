@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaPedidos" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ANDRESOLARTE-PC\SQLEXPRESS;Initial Catalog=SistemaPedidos;Integrated Security=True" SettingsObjectName="DataClasesQuickOrder.Properties.Settings" SettingsPropertyName="SistemaPedidosConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=&quot;C:\Users\AndresOlarte\SkyDrive\Repositorio\4 - Desarrollo\1 - Codigo Fuente\QuickOrder\QuickOrder\App_Data\SistemaPedidos.mdf&quot;;Integrated Security=True" SettingsObjectName="DataClasesQuickOrder.Properties.Settings" SettingsPropertyName="SistemaPedidosConnectionString4" Provider="System.Data.SqlClient" />
   <Function Name="dbo.ActualizarUsuario" Method="ActualizarUsuario">
     <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
@@ -25,10 +25,11 @@
       <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.InsertRol" Method="InsertRol">
+  <Function Name="dbo.InsertRol" Method="InsertRol" IsComposable="true">
     <Parameter Name="Aplicacion" Parameter="aplicacion" Type="System.String" DbType="NVarChar(1)" />
     <Parameter Name="RolNombre" Parameter="rolNombre" Type="System.String" DbType="NVarChar(256)" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.LAOZ_InsertUsuario" Method="LAOZ_InsertUsuario">
     <Parameter Name="Roles_idRoles" Parameter="roles_idRoles" Type="System.Int32" DbType="Int" />
@@ -37,10 +38,6 @@
     <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_Elimina_producto" Method="sp_Elimina_producto">
-    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_eliminar_cliente_natural" Method="sp_eliminar_cliente_natural">
@@ -84,9 +81,11 @@
     <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
     <Parameter Name="Nuevo_Nombre_Producto" Parameter="nuevo_Nombre_Producto" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Nuevo_Unidades_Disponibles" Parameter="nuevo_Unidades_Disponibles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MinimoUnidades" Parameter="minimoUnidades" Type="System.Int32" DbType="Int" />
     <Parameter Name="Nuevo_Descripcion" Parameter="nuevo_Descripcion" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Nuevo_Precio" Parameter="nuevo_Precio" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Parameter Name="Nuevo_IVA" Parameter="nuevo_IVA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ImagenUrl" Parameter="imagenUrl" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_modificar_vendedor" Method="sp_modificar_vendedor">
@@ -122,7 +121,7 @@
     <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_registrar_cliente_natural" Method="sp_registrar_cliente_natural">
+  <Function Name="dbo.sp_registrar_cliente_natural" Method="sp_registrar_cliente_natural" IsComposable="true">
     <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
@@ -137,31 +136,25 @@
     <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(14)" />
     <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Pagina_Web" Parameter="pagina_Web" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.sp_registrar_factura" Method="sp_registrar_factura">
+  <Function Name="dbo.sp_registrar_factura" Method="sp_registrar_factura" IsComposable="true">
     <Parameter Name="Nom_Vendedor" Parameter="nom_Vendedor" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Nom_Empresa" Parameter="nom_Empresa" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Nom_Cliente_Natural" Parameter="nom_Cliente_Natural" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Nom_Cliente_Empresarial" Parameter="nom_Cliente_Empresarial" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Forma_Pago" Parameter="forma_Pago" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.sp_registrar_producto" Method="sp_registrar_producto">
     <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
     <Parameter Name="Nombre_Producto" Parameter="nombre_Producto" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Unidades_Disponibles" Parameter="unidades_Disponibles" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MinimoUnidades" Parameter="minimoUnidades" Type="System.Int32" DbType="Int" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Precio" Parameter="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Parameter Name="IVA" Parameter="iVA" Type="System.Decimal" DbType="Decimal(18,2)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_registrar_usuario" Method="sp_registrar_usuario">
-    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Rol" Parameter="rol" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UrlImagen" Parameter="urlImagen" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_registrar_vendedor" Method="sp_registrar_vendedor">
@@ -198,6 +191,15 @@
   </Function>
   <Function Name="dbo.sp_total_factura" Method="sp_total_factura">
     <Parameter Name="idFactura" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_registrar_usuario" Method="sp_registrar_usuario">
+    <Parameter Name="Nom_Usuario" Parameter="nom_Usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pregunta" Parameter="pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Respuesta_Pregunta" Parameter="respuesta_Pregunta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

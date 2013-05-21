@@ -1,4 +1,4 @@
-﻿    
+﻿
 using System.Collections.Generic;
 
 namespace LogicQuickOrder
@@ -57,14 +57,14 @@ namespace LogicQuickOrder
             try
             {
 
-                new EntidadesDBDataContext().Usuarios.InsertOnSubmit(new DBUsuario
-                {
-                    idUsuario = usuario.IdUsuario,
-                    Nom_Usuario = usuario.NombreUsuario,
-                    Pregunta = usuario.Pregunta,
-                    Respuesta_Pregunta = usuario.RespuestaPregunta,
-                    Roles_idRoles = usuario.IdRoles
-                });
+                new DatabaseDataContext().sp_registrar_usuario(
+                    usuario.NombreUsuario,
+                    usuario.Contrasena,
+                    usuario.Pregunta,
+                    usuario.IdRoles,
+                    usuario.RespuestaPregunta,
+                    usuario.Correo);
+
                 return true;
             }
             catch (Exception)
@@ -134,6 +134,6 @@ namespace LogicQuickOrder
                                                Nombre = r.Rol,
                                                IdRoles = r.idRoles
                                            }).ToList();
-        }   
+        }
     }
 }

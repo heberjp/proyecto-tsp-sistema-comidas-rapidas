@@ -33,7 +33,7 @@ namespace DataClasesQuickOrder
     #endregion
 		
 		public DatabaseDataContext() : 
-				base(global::DataClasesQuickOrder.Properties.Settings.Default.SistemaPedidosConnectionString1, mappingSource)
+				base(global::DataClasesQuickOrder.Properties.Settings.Default.SistemaPedidosConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -76,23 +76,16 @@ namespace DataClasesQuickOrder
 			return ((ISingleResult<AutentiacionResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertRol")]
-		public void InsertRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Aplicacion", DbType="NVarChar(1)")] string aplicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RolNombre", DbType="NVarChar(256)")] string rolNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="NVarChar(256)")] string descripcion)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertRol", IsComposable=true)]
+		public object InsertRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Aplicacion", DbType="NVarChar(1)")] string aplicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RolNombre", DbType="NVarChar(256)")] string rolNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="NVarChar(256)")] string descripcion)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), aplicacion, rolNombre, descripcion);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), aplicacion, rolNombre, descripcion).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LAOZ_InsertUsuario")]
 		public int LAOZ_InsertUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Roles_idRoles", DbType="Int")] System.Nullable<int> roles_idRoles, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Usuario", DbType="VarChar(30)")] string nom_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pregunta", DbType="VarChar(30)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Respuesta_Pregunta", DbType="VarChar(30)")] string respuesta_Pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roles_idRoles, nom_Usuario, contrasena, pregunta, respuesta_Pregunta, correo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Elimina_producto")]
-		public int sp_Elimina_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idProducto)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idProducto);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -139,9 +132,9 @@ namespace DataClasesQuickOrder
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_modificar_producto")]
-		public int sp_modificar_producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdProducto", DbType="Int")] System.Nullable<int> idProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idCategoria, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Nombre_Producto", DbType="VarChar(50)")] string nuevo_Nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Unidades_Disponibles", DbType="Int")] System.Nullable<int> nuevo_Unidades_Disponibles, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Descripcion", DbType="VarChar(50)")] string nuevo_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Precio", DbType="Decimal(18,2)")] System.Nullable<decimal> nuevo_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_IVA", DbType="Decimal(18,2)")] System.Nullable<decimal> nuevo_IVA)
+		public int sp_modificar_producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdProducto", DbType="Int")] System.Nullable<int> idProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idCategoria, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Nombre_Producto", DbType="VarChar(50)")] string nuevo_Nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Unidades_Disponibles", DbType="Int")] System.Nullable<int> nuevo_Unidades_Disponibles, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MinimoUnidades", DbType="Int")] System.Nullable<int> minimoUnidades, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Descripcion", DbType="VarChar(50)")] string nuevo_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_Precio", DbType="Decimal(18,2)")] System.Nullable<decimal> nuevo_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo_IVA", DbType="Decimal(18,2)")] System.Nullable<decimal> nuevo_IVA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImagenUrl", DbType="VarChar(50)")] string imagenUrl)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idProducto, idCategoria, nuevo_Nombre_Producto, nuevo_Unidades_Disponibles, nuevo_Descripcion, nuevo_Precio, nuevo_IVA);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idProducto, idCategoria, nuevo_Nombre_Producto, nuevo_Unidades_Disponibles, minimoUnidades, nuevo_Descripcion, nuevo_Precio, nuevo_IVA, imagenUrl);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -166,30 +159,22 @@ namespace DataClasesQuickOrder
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_cliente_natural")]
-		public void sp_registrar_cliente_natural([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Usuario", DbType="VarChar(50)")] string nom_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pregunta", DbType="VarChar(50)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Respuesta_Pregunta", DbType="VarChar(50)")] string respuesta_Pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Documento", DbType="VarChar(50)")] string documento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo_Documento", DbType="VarChar(4)")] string tipo_Documento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Primer_Nombre", DbType="VarChar(50)")] string primer_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Segundo_Nombre", DbType="VarChar(50)")] string segundo_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Primer_Apellido", DbType="VarChar(50)")] string primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Segundo_Apellido", DbType="VarChar(50)")] string segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(14)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pagina_Web", DbType="VarChar(50)")] string pagina_Web)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_cliente_natural", IsComposable=true)]
+		public object sp_registrar_cliente_natural([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Usuario", DbType="VarChar(50)")] string nom_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pregunta", DbType="VarChar(50)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Respuesta_Pregunta", DbType="VarChar(50)")] string respuesta_Pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Documento", DbType="VarChar(50)")] string documento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo_Documento", DbType="VarChar(4)")] string tipo_Documento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Primer_Nombre", DbType="VarChar(50)")] string primer_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Segundo_Nombre", DbType="VarChar(50)")] string segundo_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Primer_Apellido", DbType="VarChar(50)")] string primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Segundo_Apellido", DbType="VarChar(50)")] string segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(14)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pagina_Web", DbType="VarChar(50)")] string pagina_Web)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Usuario, contraseña, pregunta, respuesta_Pregunta, correo, documento, tipo_Documento, primer_Nombre, segundo_Nombre, primer_Apellido, segundo_Apellido, telefono, direccion, pagina_Web);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Usuario, contraseña, pregunta, respuesta_Pregunta, correo, documento, tipo_Documento, primer_Nombre, segundo_Nombre, primer_Apellido, segundo_Apellido, telefono, direccion, pagina_Web).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_factura")]
-		public int sp_registrar_factura([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Vendedor", DbType="VarChar(50)")] string nom_Vendedor, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Empresa", DbType="VarChar(50)")] string nom_Empresa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Cliente_Natural", DbType="VarChar(50)")] string nom_Cliente_Natural, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Cliente_Empresarial", DbType="VarChar(50)")] string nom_Cliente_Empresarial, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Forma_Pago", DbType="VarChar(50)")] string forma_Pago)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_factura", IsComposable=true)]
+		public object sp_registrar_factura([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Vendedor", DbType="VarChar(50)")] string nom_Vendedor, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Empresa", DbType="VarChar(50)")] string nom_Empresa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Cliente_Natural", DbType="VarChar(50)")] string nom_Cliente_Natural, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Cliente_Empresarial", DbType="VarChar(50)")] string nom_Cliente_Empresarial, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Forma_Pago", DbType="VarChar(50)")] string forma_Pago)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Vendedor, nom_Empresa, nom_Cliente_Natural, nom_Cliente_Empresarial, forma_Pago);
-			return ((int)(result.ReturnValue));
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Vendedor, nom_Empresa, nom_Cliente_Natural, nom_Cliente_Empresarial, forma_Pago).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_producto")]
-		public int sp_registrar_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idCategoria, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre_Producto", DbType="VarChar(50)")] string nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Unidades_Disponibles", DbType="Int")] System.Nullable<int> unidades_Disponibles, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Precio", DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IVA", DbType="Decimal(18,2)")] System.Nullable<decimal> iVA)
+		public int sp_registrar_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idCategoria, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre_Producto", DbType="VarChar(50)")] string nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Unidades_Disponibles", DbType="Int")] System.Nullable<int> unidades_Disponibles, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MinimoUnidades", DbType="Int")] System.Nullable<int> minimoUnidades, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Precio", DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IVA", DbType="Decimal(18,2)")] System.Nullable<decimal> iVA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UrlImagen", DbType="VarChar(50)")] string urlImagen)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCategoria, nombre_Producto, unidades_Disponibles, descripcion, precio, iVA);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_usuario")]
-		public int sp_registrar_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Usuario", DbType="VarChar(50)")] string nom_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pregunta", DbType="VarChar(50)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Rol", DbType="VarChar(50)")] string rol, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Respuesta_Pregunta", DbType="VarChar(50)")] string respuesta_Pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Usuario, contraseña, pregunta, rol, respuesta_Pregunta, correo);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCategoria, nombre_Producto, unidades_Disponibles, minimoUnidades, descripcion, precio, iVA, urlImagen);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -211,6 +196,13 @@ namespace DataClasesQuickOrder
 		public int sp_total_factura([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idFactura)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFactura);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_usuario")]
+		public int sp_registrar_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Usuario", DbType="VarChar(50)")] string nom_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Pregunta", DbType="VarChar(50)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idRol, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Respuesta_Pregunta", DbType="VarChar(50)")] string respuesta_Pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Usuario, contraseña, pregunta, idRol, respuesta_Pregunta, correo);
 			return ((int)(result.ReturnValue));
 		}
 	}

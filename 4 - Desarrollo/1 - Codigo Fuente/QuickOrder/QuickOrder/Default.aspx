@@ -5,7 +5,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#pikame").PikaChoose();
-        });     
+        });
     </script>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
@@ -24,7 +24,7 @@
         </div>
         <div class="clear"></div>
         <div class="border"></div>
-        <div class="home-widget">
+        <%--<div class="home-widget">
             <h3>Lorem Ipsum</h3>
             <img src="images/Home1/3.jpg" width="280" height="250" alt="" />
             <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
@@ -38,42 +38,38 @@
             <h3>Lorem Ipsum</h3>
             <img src="images/Home1/1.jpg" width="280" height="250" alt="" />
             <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
-        </div>
-        <div class="border2" />
-        <br />
-        <br />
-        <div id="pricing-table">
-            <div class="plan">
-                <h3>Breakfast<span>$99</span></h3>
-                <a class="button" href="Menu.aspx">Order Now</a>
-                <ul>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                </ul>
-            </div>
-            <div class="plan">
-                <h3>Lunch<span>$99</span></h3>
-                <a class="button" href="Menu.aspx">Order Now</a>
-                <ul>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                </ul>
-            </div>
-            <div class="plan">
-                <h3>Dinner<span>$99</span></h3>
-                <a class="button" href="Menu.aspx">Order Now</a>
-                <ul>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                    <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
-                </ul>
+        </div>--%>
+        <div class="border2">
+            <br />
+            <br />
+            <div id="pricing-table">
+                <div class="plan">
+                    <h3>Desalluno
+                    <asp:Label runat="server" ID="ValorDesalluno" /></h3>
+                    <a class="button" href="Menu.aspx">Ordena Ahora</a>
+                    <asp:GridView ID="gvDesallunos" runat="server"></asp:GridView>
+                </div>
+                <div class="plan">
+                    <h3>Almuerzo<span>$99</span></h3>
+                    <a class="button" href="Menu.aspx">Order Now</a>
+                    <ul>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sena<span>$99</span></h3>
+                    <a class="button" href="Menu.aspx">Order Now</a>
+                    <ul>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                        <li><strong style="text-transform: uppercase">lorem Ipsum</strong> Dolor Sit Amet</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="border2" />
     </div>
 </asp:Content>

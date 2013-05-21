@@ -123,6 +123,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdminInventario.aspx" />
+    <Content Include="AdminUsuario.aspx" />
+    <Content Include="App_Data\SistemaPedidos.mdf" />
+    <Content Include="App_Data\SistemaPedidos_log.ldf">
+      <DependentUpon>SistemaPedidos.mdf</DependentUpon>
+    </Content>
+    <Content Include="Images\Bajo.png" />
+    <Content Include="Images\Carrito.png" />
+    <Content Include="Images\Estable.png" />
     <Content Include="Images\fancy_close.png" />
     <Content Include="Images\Galery1\1.jpeg" />
     <Content Include="Images\Galery1\2.jpg" />
@@ -256,6 +265,20 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInventario.aspx.cs">
+      <DependentUpon>AdminInventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminInventario.aspx.designer.cs">
+      <DependentUpon>AdminInventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsuario.aspx.cs">
+      <DependentUpon>AdminUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUsuario.aspx.designer.cs">
+      <DependentUpon>AdminUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -335,7 +358,6 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Images\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>

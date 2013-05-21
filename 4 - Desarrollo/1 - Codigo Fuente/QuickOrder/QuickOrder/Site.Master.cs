@@ -21,9 +21,7 @@ namespace QuickOrder
         private void Validarusuario()
         {
             var usuario = (VoQuickOrder.Usuario)Session["usuario"];
-
             var validacion = usuario != null;
-
             lbNombreUsuario.Text = validacion ? usuario.NombreUsuario : string.Empty;
             lnkblogin.Visible = !validacion;
             lnkbregister.Visible = !validacion;

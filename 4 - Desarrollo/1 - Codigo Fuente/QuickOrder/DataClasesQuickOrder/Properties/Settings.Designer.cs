@@ -55,5 +55,39 @@ namespace DataClasesQuickOrder.Properties {
                 return ((string)(this["SistemaPedidosConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\v11.0;Initial Catalog=SistemaPedidos;Integrated Security=Tr" +
+            "ue")]
+        public string SistemaPedidosConnectionString2 {
+            get {
+                return ((string)(this["SistemaPedidosConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\SistemaPedidos.mdf;I" +
+            "ntegrated Security=True;Connect Timeout=30")]
+        public string SistemaPedidosConnectionString3 {
+            get {
+                return ((string)(this["SistemaPedidosConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"C:\\Users\\AndresOlarte\\SkyDrive\\Repo" +
+            "sitorio\\4 - Desarrollo\\1 - Codigo Fuente\\QuickOrder\\QuickOrder\\App_Data\\SistemaP" +
+            "edidos.mdf\";Integrated Security=True")]
+        public string SistemaPedidosConnectionString4 {
+            get {
+                return ((string)(this["SistemaPedidosConnectionString4"]));
+            }
+        }
     }
 }

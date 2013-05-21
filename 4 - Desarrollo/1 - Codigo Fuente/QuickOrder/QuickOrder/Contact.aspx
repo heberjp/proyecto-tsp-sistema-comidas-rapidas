@@ -3,18 +3,15 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h1><%: Title %>.</h1>
     <br />
-    <h2>LUIS ANDRES OLARTE ZABALA</h2>
     <br />
     <section class="contact">
+        <h2>LUIS ANDRES OLARTE ZABALA</h2>
         <header>
             <h3>Numero:</h3>
         </header>
         <p>
             <span>311 312 27 80</span>
         </p>
-    </section>
-
-    <section class="contact">
         <header>
             <h3>Correo:</h3>
         </header>
